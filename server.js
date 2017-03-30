@@ -8,11 +8,11 @@ let ethstats = new (require('./lib/ethstatus'))();
 //ethstats.startWeb3Connection;
  
 const server = restify.createServer({
-  name: 'Things API Server'
+  name: 'Ethereum client status server'
 });
  
 server.use(restify.queryParser());
-server.use(restify.bodyParser()); // don't need this.
+// server.use(restify.bodyParser()); // don't need this.
  
 server.use(function logger(req,res,next) {
   debug(new Date(),req.method,req.url);
@@ -30,10 +30,12 @@ server.listen(port,host, function() {
 });
 
 server.get('/status',function(req,res){
-  res.json({"foobar":true });
+  let currentStats = ethstats.currentStats();
+  res.json(currentStats);
 });
  
 server.get('/status/:name',function(req,res,next){
+  res.json({ "something": "new"});
   // var id = req.params.id;
   // var thing = db.getThingById(id);
   // if(!thing){
