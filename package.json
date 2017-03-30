@@ -1,0 +1,24 @@
+{
+  "name": "ethstats-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ethereum",
+    "web3",
+    "geth",
+    "blockchain"
+  ],
+  "author": "Shawn Cicoria",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "debug": "^2.6.3",
+    "lodash": "^4.17.4",
+    "restify": "^4.3.0",
+    "web3": "^0.18.4"
+  }
+}
